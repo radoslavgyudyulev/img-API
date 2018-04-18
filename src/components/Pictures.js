@@ -5,7 +5,7 @@ export default class Users extends Component {
         super(props);
         
         this.state = {
-            image: 'http://placehold.it/600/92c952',
+            image: 'https://jsonplaceholder.typicode.com/photos/3',
             title: 'Shit',
             id: 6,
             width: '300px',
@@ -30,9 +30,18 @@ export default class Users extends Component {
         let imgWidth = e.target.value
         this.setState({
             width: imgWidth + 'px'
-        })
-        
+        }) 
     }
+
+    setHeight(e) {
+        let imgHeight = e.target.value
+        this.setState({
+            width: imgHeight + 'px'
+        }) 
+    }
+
+
+
     
     
 
@@ -48,8 +57,10 @@ export default class Users extends Component {
                 <hr/>
                 ID: 
                 <input onChange={this.fetchData.bind(this)} type="number"/>
-                Size:    
+                Width:    
                 <input onChange={this.setWidth.bind(this)} type="number"/>
+                Height:
+                <input onChange={this.setHeight.bind(this)} type="number"/>
                 <br/>
                 <br/>
                 <h4>{this.state.title}</h4>
